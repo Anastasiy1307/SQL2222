@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Moto</string>
+    <string name="sort">Выберите фильтр по Марке автомобиля</string>
+
+</resources>
