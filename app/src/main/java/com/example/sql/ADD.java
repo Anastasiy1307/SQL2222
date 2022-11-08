@@ -147,7 +147,6 @@ public class ADD extends AppCompatActivity {
                 Power.setText("");
                 imageButton.setImageResource(R.drawable.gluxo);
                 DataModal responseFromAPI = response.body();
-
             }
 
             @Override

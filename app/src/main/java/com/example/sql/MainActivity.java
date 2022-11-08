@@ -76,14 +76,14 @@ public class MainActivity extends AppCompatActivity {
                     for (int i=0;i<tempArray.length();i++)
                     {
                         JSONObject productJson=tempArray.getJSONObject(i);
-                        mask tempSushi = new mask(
+                        mask tempMoto = new mask(
                                 productJson.getInt("ID"),
                                 productJson.getString("Image"),
                                 productJson.getString("Name"),
                                 productJson.getString("Speed"),
                                 productJson.getString("Power")
                         );
-                        ListMotos.add(tempSushi);
+                        ListMotos.add(tempMoto);
                         pAdapter.notifyDataSetInvalidated();
                     }
                 }
