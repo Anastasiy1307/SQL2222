@@ -6,5 +6,5 @@ import retrofit2.http.Query;
 
 public interface RetrofitAPIDelete {
     @DELETE("motoes/")
-    Call<DataModal> deleteData(@Query("ID") int id);
+    Call<DataModal> deleteData(@Query("Id") int id);
 }

@@ -29,7 +29,7 @@ public class ADD extends AppCompatActivity {
 
     String img="";
     private ImageView imageButton;
-    private EditText Name, Speed, Power;
+    private EditText Name,Speed, Power;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +90,7 @@ public class ADD extends AppCompatActivity {
     public  void Add(View v)
     {
         AlertDialog.Builder builder=new AlertDialog.Builder(ADD.this);
-        builder.setTitle("Добавить")
+        builder.setTitle("Добвить")
                 .setMessage("Вы уверены что хотите добавить данные")
                 .setCancelable(false)
                 .setPositiveButton("Да", new DialogInterface.OnClickListener() {
@@ -105,11 +105,11 @@ public class ADD extends AppCompatActivity {
                             if (img=="")
                             {
                                 img=null;
-                                postAdd(img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString() );
+                                postAdd(img,Name.getText().toString(),Speed.getText().toString(), Power.getText().toString());
                             }
                             else
                             {
-                                postAdd(img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString() );
+                                postAdd(img,Name.getText().toString(),Speed.getText().toString(),Power.getText().toString());
                             }
                             Next();
                         }
@@ -147,6 +147,7 @@ public class ADD extends AppCompatActivity {
                 Power.setText("");
                 imageButton.setImageResource(R.drawable.gluxo);
                 DataModal responseFromAPI = response.body();
+
             }
 
             @Override
@@ -156,14 +157,16 @@ public class ADD extends AppCompatActivity {
         });
     }
 
-    public void btBack(View v)
-    {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
     public void Next()
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void btBack(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
