@@ -26,9 +26,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ADD extends AppCompatActivity {
+
     String img="";
     private ImageView imageButton;
-    private EditText Name,Power,Speed;
+    private EditText Name, Speed, Power;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,8 @@ public class ADD extends AppCompatActivity {
         setContentView(R.layout.activity_add);
         imageButton=findViewById(R.id.ImgBut);
         Name=findViewById(R.id.edtMarka);
-        Power=findViewById(R.id.edtPower);
         Speed=findViewById(R.id.edtSpeed);
+        Power=findViewById(R.id.edtPower);
 
     }
 
@@ -89,13 +90,13 @@ public class ADD extends AppCompatActivity {
     public  void Add(View v)
     {
         AlertDialog.Builder builder=new AlertDialog.Builder(ADD.this);
-        builder.setTitle("Добвить")
+        builder.setTitle("Добавить")
                 .setMessage("Вы уверены что хотите добавить данные")
                 .setCancelable(false)
                 .setPositiveButton("Да", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (Name.getText().length()==0 || Speed.getText().length()==0 ||  Power.getText().length()==0 )
+                        if (Name.getText().length()==0 || Speed.getText().length()==0 || Power.getText().length()==0)
                         {
                             Toast.makeText(ADD.this, "Не заполненны обязательные поля", Toast.LENGTH_SHORT).show();
                             return;
@@ -104,11 +105,11 @@ public class ADD extends AppCompatActivity {
                             if (img=="")
                             {
                                 img=null;
-                                postAdd(img,Name.getText().toString(),Speed.getText().toString(),Power.getText().toString());
+                                postAdd(img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString() );
                             }
                             else
                             {
-                                postAdd(img,Name.getText().toString(),Speed.getText().toString(),Power.getText().toString());
+                                postAdd(img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString() );
                             }
                             Next();
                         }
@@ -125,16 +126,16 @@ public class ADD extends AppCompatActivity {
         dialog.show();
     }
 
-    private void postAdd(String image, String  name ,String speed,String power)
+    private void postAdd(String image, String name,String speed, String power)
     {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ngknn.ru:5001/NGKNN/ВласоваАС/api/motoes/")
+                .baseUrl("https://ngknn.ru:5001/ngknn/ВласоваАС/api/motoes/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
 
-        DataModal modal = new DataModal(image, name,speed,power);
+        DataModal modal = new DataModal(image, name, speed, power);
 
         Call<DataModal> call = retrofitAPI.createPost(modal);
         call.enqueue(new Callback<DataModal>() {
@@ -156,9 +157,13 @@ public class ADD extends AppCompatActivity {
         });
     }
 
+    public void btBack(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
     public void Next()
     {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

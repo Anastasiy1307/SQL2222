@@ -86,20 +86,6 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/BackAdd"
-            android:layout_width="144dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginHorizontal="45dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#46344E"
-            android:text="Назад"
-            android:textColor="@color/white"
-            app:cornerRadius="25dp"
-            app:strokeWidth="1dp" />
-
-        <Button
             android:id="@+id/AddAdd"
             android:layout_width="145dp"
             android:layout_height="wrap_content"
@@ -112,6 +98,24 @@
             android:minHeight="48dp"
             android:onClick="Add"
             android:text="Добавить"
+            android:textColor="@color/white"
+            app:cornerRadius="25dp"
+            app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/addBack"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#46344E"
+            android:minHeight="48dp"
+            android:onClick="btBack"
+            android:text="Назад"
             android:textColor="@color/white"
             app:cornerRadius="25dp"
             app:strokeWidth="1dp" />

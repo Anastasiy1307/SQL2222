@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Adapter pAdapter;
-    private List<mask> ListMotos=new ArrayList<>();
+    private final List<mask> ListMotos=new ArrayList<>();
     Spinner spinnerFilter;
     String [] Filter={"Без фильтрации","По возрастанию","По убыванию"};
     @Override
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         JSONObject productJson=tempArray.getJSONObject(i);
                         mask tempSushi = new mask(
-                                productJson.getInt("Id"),
+                                productJson.getInt("ID"),
                                 productJson.getString("Image"),
                                 productJson.getString("Name"),
                                 productJson.getString("Speed"),

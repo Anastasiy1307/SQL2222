@@ -40,7 +40,7 @@ public class Upd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        mask=getIntent().getParcelableExtra("motoes");
+        mask=getIntent().getParcelableExtra("Moto");
         imageView=findViewById(R.id.image_moto_upd);
 
         Name=findViewById(R.id.UpMark);
@@ -138,7 +138,7 @@ public class Upd extends AppCompatActivity {
     private void putUpdate(String image, String  name ,String speed,String power)
     {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ngknn.ru:5001/NGKNN/ВласоваАС/api/motoes")
+                .baseUrl("https://ngknn.ru:5001/NGKNN/ВласоваАС/api/motoes/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitAPIUpdate update = retrofit.create(RetrofitAPIUpdate.class);
@@ -186,7 +186,7 @@ public class Upd extends AppCompatActivity {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ngknn.ru:5001/NGKNN/ВласоваАС/api/motoes")
+                .baseUrl("https://ngknn.ru:5001/NGKNN/ВласоваАС/api/motoes/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitAPIDelete delete = retrofit.create(RetrofitAPIDelete.class);
@@ -205,6 +205,11 @@ public class Upd extends AppCompatActivity {
             }
         });
 
+    }
+    public void btBack(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void Next()

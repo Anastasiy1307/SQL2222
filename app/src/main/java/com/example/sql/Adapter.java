@@ -86,7 +86,7 @@ public class Adapter extends BaseAdapter {
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intenDetalis=new Intent(nContext,Upd.class);
+                Intent intenDetalis = new Intent(nContext,Upd.class);
                 intenDetalis.putExtra("Moto",mask);
                 nContext.startActivity(intenDetalis);
 
