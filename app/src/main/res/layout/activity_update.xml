@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onClickChooseImage"
     android:orientation="vertical"
     tools:context=".Upd">
 
@@ -31,13 +30,14 @@
         android:layout_marginTop="10dp"
         android:text="Марка мотоцикла"
         android:textColor="@color/black" />
+
     <EditText
         android:id="@+id/UpPower"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/UpMark"
+        android:layout_below="@+id/image_moto_upd"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="140dp"
         android:text="Мощность"
         android:textColor="@color/black" />
 
@@ -45,14 +45,9 @@
         android:id="@+id/upSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/UpMark"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="301dp"
+        android:layout_below="@+id/image_moto_upd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
         android:text="Скорость"
         android:textColor="@color/black" />
 
@@ -118,8 +113,6 @@
             android:textColor="@color/white"
             app:cornerRadius="10dp" />
     </LinearLayout>
-
-
 
 
 </RelativeLayout>

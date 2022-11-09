@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         motoView.setAdapter(pAdapter);
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Filter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
+        configurationNextButton();
         spinnerFilter=findViewById(R.id.filter);
         spinnerFilter.setAdapter(adapter);
 
@@ -42,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
         new GetMoto().execute();
     }
+
+    private void configurationNextButton()
+    {
+        ImageButton addData = findViewById(R.id.btadd);
+        addData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ADD.class));
+            }
+        });
+    }
+
     private class GetMoto extends AsyncTask<Void,Void,String>
     {
 
@@ -95,9 +108,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void btadd(View v)
-    {
-        Intent intent = new Intent(this, ADD.class);
-        startActivity(intent);
-    }
+
 }

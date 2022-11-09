@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SQL"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".ADD"
@@ -24,13 +25,6 @@
         </activity>
         <activity
             android:name=".Upd"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".mask"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Upd extends AppCompatActivity {
     ImageView imageView;
-    EditText Name, Price, Compound;
+    EditText Name, Speed, Power;
     String img="";
     mask mask;
 
@@ -45,10 +45,10 @@ public class Upd extends AppCompatActivity {
 
         Name=findViewById(R.id.UpMark);
         Name.setText(mask.getName());
-        Price=findViewById(R.id.upSpeed);
-        Price.setText(mask.getSpeed());
-        Compound=findViewById(R.id.UpPower);
-        Compound.setText(mask.getPower());
+        Speed=findViewById(R.id.upSpeed);
+        Speed.setText(mask.getSpeed());
+        Power=findViewById(R.id.UpPower);
+        Power.setText(mask.getPower());
         imageView.setImageBitmap(getImgBitmap(mask.getImage()));
 
     }
@@ -121,7 +121,7 @@ public class Upd extends AppCompatActivity {
                 .setPositiveButton("Да", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        putUpdate(img,Name.getText().toString(),Compound.getText().toString(),Price.getText().toString());
+                        putUpdate(img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString());
                         Next();
                     }
                 })
