@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         new GetMoto().execute();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new GetMoto().execute();
+    }
+
     public void btupd(View v) {
         new GetMoto().execute();
     }
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private void configurationNextButton() {
         ImageButton addData = findViewById(R.id.btadd);
         addData.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ADD.class)));
+
     }
 
     private class GetMoto extends AsyncTask<Void, Void, String> {
@@ -81,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 {
                     JSONArray tempArray = new JSONArray(s);
+                    ListMotos.clear();
                     for (int i = 0; i < tempArray.length(); i++) {
                         JSONObject productJson = tempArray.getJSONObject(i);
                         mask tempMoto = new mask(

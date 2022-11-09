@@ -55,7 +55,7 @@ public class ADD extends AppCompatActivity {
             } else {
                 postData(Img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString());
             }
-            Next();
+            finish();
         }
 
     }
@@ -63,6 +63,7 @@ public class ADD extends AppCompatActivity {
     public void Next() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
     }
 
     public void onClickChooseImage(View view) {
