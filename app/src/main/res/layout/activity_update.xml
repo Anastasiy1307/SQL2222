@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e1ebec"
     android:orientation="vertical"
     tools:context=".Upd">
 
@@ -14,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:background="#e1ebec"
         android:minWidth="250dp"
         android:minHeight="250dp"
         android:onClick="onClickChooseImage"
@@ -58,7 +59,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="-2dp"
-        android:background="#9B786F"
+        android:background="#72a5d3"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -71,7 +72,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#46344E"
+            android:backgroundTint="#193f6e"
             android:minHeight="48dp"
             android:onClick="Update_bt"
             android:text="Изменить"
@@ -89,7 +90,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#46344E"
+            android:backgroundTint="#193f6e"
             android:minHeight="48dp"
             android:onClick="Delet_bt"
             android:text="Удалить"
@@ -106,7 +107,7 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:backgroundTint="#46344E"
+            android:backgroundTint="#193f6e"
             android:minHeight="48dp"
             android:onClick="btBack"
             android:text="Назад"

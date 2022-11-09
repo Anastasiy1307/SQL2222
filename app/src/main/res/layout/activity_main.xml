@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
 
-        android:background="#9B786F">
+        android:background="#72a5d3">
 
         <Spinner
             android:id="@+id/filter"
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="#9B786F"
+        android:background="#72a5d3"
         android:orientation="horizontal">
 
         <ImageButton
@@ -45,7 +45,7 @@
             android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:backgroundTint="#9B786F"
+            android:backgroundTint="#72a5d3"
             android:onClick="btadd"
             android:src="@drawable/add1"
             android:textAlignment="center"
@@ -63,7 +63,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/Down"
         android:layout_below="@+id/Up"
-        android:background="#6A9D8D8F">
+        android:background="#e1ebec">
 
     </ListView>
 

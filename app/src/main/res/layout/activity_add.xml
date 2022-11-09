@@ -10,7 +10,7 @@
         android:id="@+id/Vverh"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:background="#9B786F"
+        android:background="#72a5d3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/Niz"
         android:layout_below="@+id/Vverh"
-        android:background="#6A9D8D8F"
+        android:background="#e1ebec"
         android:orientation="vertical">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -81,7 +81,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="-2dp"
-        android:background="#9B786F"
+        android:background="#72a5d3"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -94,7 +94,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="#46344E"
+            android:backgroundTint="#193f6e"
             android:minHeight="48dp"
             android:onClick="Add"
             android:text="Добавить"
@@ -112,7 +112,7 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:backgroundTint="#46344E"
+            android:backgroundTint="#193f6e"
             android:minHeight="48dp"
             android:onClick="btBack"
             android:text="Назад"
