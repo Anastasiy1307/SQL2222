@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#193F6E"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -54,6 +55,15 @@
             app:cornerRadius="50dp"
             app:strokeColor="#7D8BE4"
             app:strokeWidth="1dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#193f6e"
+            android:onClick="btupd"
+            android:text="Обновить" />
 
     </LinearLayout>
 

@@ -164,12 +164,9 @@ public class Upd extends AppCompatActivity {
         builder.setTitle("Удалить")
                 .setMessage("Вы уверены что хотите Удалить данные")
                 .setCancelable(false)
-                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        deleteDelet();
-                        Next();
-                    }
+                .setPositiveButton("Да", (dialogInterface, i) -> {
+                    deleteDelet();
+                    Next();
                 })
                 .setNegativeButton("Нет", new DialogInterface.OnClickListener() {
                     @Override

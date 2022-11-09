@@ -29,7 +29,7 @@ public class ADD extends AppCompatActivity {
     private EditText Name, Speed, Power;
     private Button Add;
     private ImageView imageButton;
-    String Img="";
+    String Img = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,34 +43,29 @@ public class ADD extends AppCompatActivity {
         imageButton = findViewById(R.id.ImgBut);
 
     }
-    public  void Add(View v)
-    {
-        if (Speed.getText().length()==0 || Power.getText().length()==0 ||  Name.getText().length()==0 )
-        {
+
+    public void Add(View v) {
+        if (Speed.getText().length() == 0 || Power.getText().length() == 0 || Name.getText().length() == 0) {
             Toast.makeText(ADD.this, "Не заполненны обязательные поля", Toast.LENGTH_SHORT).show();
             return;
-        }
-        else{
-            if (Img=="")
-            {
-                Img=null;
-                postData(Img, Name.getText().toString(), Speed.getText().toString(),Power.getText().toString());
-            }
-            else
-            {
-                postData(Img, Name.getText().toString(), Speed.getText().toString(),Power.getText().toString());
+        } else {
+            if (Img == "") {
+                Img = null;
+                postData(Img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString());
+            } else {
+                postData(Img, Name.getText().toString(), Speed.getText().toString(), Power.getText().toString());
             }
             Next();
         }
 
     }
-    public void Next()
-    {
+
+    public void Next() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-    public void onClickChooseImage(View view)
-    {
+
+    public void onClickChooseImage(View view) {
         getImage();
 
     }
@@ -78,25 +73,22 @@ public class ADD extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1 && data!= null && data.getData()!= null)
-        {
-            if(resultCode==RESULT_OK)
-            {
-                Log.d("MyLog","Image URI : "+data.getData());
+        if (requestCode == 1 && data != null && data.getData() != null) {
+            if (resultCode == RESULT_OK) {
+                Log.d("MyLog", "Image URI : " + data.getData());
                 imageButton.setImageURI(data.getData());
-                Bitmap bitmap = ((BitmapDrawable)imageButton.getDrawable()).getBitmap();
+                Bitmap bitmap = ((BitmapDrawable) imageButton.getDrawable()).getBitmap();
                 encodeImage(bitmap);
 
             }
         }
     }
 
-    private void getImage()
-    {
-        Intent intentChooser= new Intent();
+    private void getImage() {
+        Intent intentChooser = new Intent();
         intentChooser.setType("image/*");
         intentChooser.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intentChooser,1);
+        startActivityForResult(intentChooser, 1);
     }
 
     private String encodeImage(Bitmap bitmap) {
@@ -107,11 +99,12 @@ public class ADD extends AppCompatActivity {
         b.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
         byte[] bytes = byteArrayOutputStream.toByteArray();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Img= Base64.getEncoder().encodeToString(bytes);
+            Img = Base64.getEncoder().encodeToString(bytes);
             return Img;
         }
         return "";
     }
+
     private void configureBackButton() {
         Button back = (Button) findViewById(R.id.addBack);
         back.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +114,7 @@ public class ADD extends AppCompatActivity {
             }
         });
     }
+
     private void postData(String name, String speed, String power, String Image) {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -132,7 +126,7 @@ public class ADD extends AppCompatActivity {
 
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        DataModal modal = new DataModal(name,speed,power,Image);
+        DataModal modal = new DataModal(name, speed, power, Image);
 
         Call<DataModal> call = retrofitAPI.createPost(modal);
 
@@ -147,6 +141,7 @@ public class ADD extends AppCompatActivity {
                 DataModal responseFromAPI = response.body();
 
             }
+
             @Override
             public void onFailure(Call<DataModal> call, Throwable t) {
             }
